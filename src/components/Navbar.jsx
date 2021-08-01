@@ -1,12 +1,18 @@
 import React from "react";
-import Logo from "../assets/images/logo.png";
+import styled from "styled-components";
+import Logo from "./Logo";
 
 const Navbar = () => {
   return (
-    <div>
-      <img src={Logo} alt="" />
-    </div>
+    <Wrapper>
+      <Logo />
+    </Wrapper>
   );
 };
+
+const Wrapper = styled.nav`
+  position: sticky;
+  top: 0;
+`;
 
 export default Navbar;

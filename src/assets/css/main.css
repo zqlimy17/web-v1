@@ -1,10 +1,10 @@
 @import "./typography.css";
 
 :root {
-  --dark-purple: #290f38;
-  --tan: #b8985e;
-  --light-green: #39b874;
-  --dark-green: #276b47;
+  --dark-purple: #121f1f;
+  --primary: #e6e6fa;
+  --secondary: #39b874;
+  --dark-secondary: #276b47;
   --transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 
@@ -13,12 +13,21 @@ body {
   font-weight: normal;
   word-wrap: break-word;
   font-kerning: normal;
-  color: var(--tan);
+  -webkit-font-smoothing: antialiased;
+  color: var(--primary);
   background-color: var(--dark-purple);
 }
 
+h1 {
+  color: cadetblue;
+}
+
+h2 {
+  color: var(--primary);
+}
+
 p > a {
-  color: var(--light-green);
+  color: var(--secondary);
   display: inline-block;
   text-decoration: none;
   position: relative;
@@ -42,11 +51,16 @@ p > a::after {
   height: 1px;
   position: relative;
   bottom: 0.1em;
-  background-color: var(--light-green);
+  background-color: var(--secondary);
   transition: var(--transition);
   opacity: 0.5;
 }
 
 .bold {
-  font-family: "Mosk900";
+  font-family: "Mosk";
+}
+
+.mono {
+  font-family: monospace;
+  color: var(--secondary);
 }

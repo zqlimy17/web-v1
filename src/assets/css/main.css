@@ -1,0 +1,52 @@
+@import "./typography.css";
+
+:root {
+  --dark-purple: #290f38;
+  --tan: #b8985e;
+  --light-green: #39b874;
+  --dark-green: #276b47;
+  --transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  font-weight: normal;
+  word-wrap: break-word;
+  font-kerning: normal;
+  color: var(--tan);
+  background-color: var(--dark-purple);
+}
+
+p > a {
+  color: var(--light-green);
+  display: inline-block;
+  text-decoration: none;
+  position: relative;
+  transition: var(--transition);
+}
+
+p > a:hover {
+  outline: 0px;
+}
+
+p > a:hover::after,
+p > a:focus::after,
+p > a:active::after {
+  width: 100%;
+}
+
+p > a::after {
+  content: "";
+  display: block;
+  width: 0px;
+  height: 1px;
+  position: relative;
+  bottom: 0.1em;
+  background-color: var(--light-green);
+  transition: var(--transition);
+  opacity: 0.5;
+}
+
+.bold {
+  font-family: "Mosk900";
+}

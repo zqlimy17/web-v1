@@ -1,11 +1,13 @@
 import React from "react";
-import Layout from "../components/Layout";
 
 const Main = () => {
   return (
-    <Layout>
+    <div className="">
+      <p>
+        <a href="#">This is a link</a>
+      </p>
       <h2>Home Page</h2>
-    </Layout>
+    </div>
   );
 };
 

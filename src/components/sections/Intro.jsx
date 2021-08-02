@@ -7,7 +7,7 @@ const Intro = () => {
     <Wrapper>
       <div>
         <div className="mono">
-          <p>Hi, my name is</p>
+          <p>Hey there, my name is</p>
         </div>
         <div className="bold">
           <h1 className="heading">Zack Lim.</h1>
@@ -42,6 +42,7 @@ const Wrapper = styled.section`
   align-items: flex-start;
   min-height: 100vh;
   padding: 0px;
+  margin-top: -100px;
 
   h1 {
     font-size: clamp(40px, 6vw, 75px);

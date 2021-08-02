@@ -1,4 +1,8 @@
 @import "./typography.css";
+* {
+  outline: 1px dashed red;
+  outline-offset: -1px;
+}
 
 :root {
   --dark-purple: #121f1f;
@@ -7,9 +11,11 @@
   --dark-secondary: #276b47;
   --tint-secondary: rgba(39, 107, 71, 0.2);
   --transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+  --easing: cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 
 body {
+  counter-reset: navItem;
   font-family: "Montserrat", sans-serif;
   font-weight: normal;
   word-wrap: break-word;

@@ -9,8 +9,8 @@ const Logo = () => {
           <title>Layer 1</title>
           <path
             stroke="#39b874"
-            fill-opacity="1"
-            stroke-width="2"
+            fillOpacity="1"
+            strokeWidth="2"
             fill="rgba(0,0,0,0)"
             id="svg_1"
             d="m1.12387,31.49831l4.71564,-20.40623l19.0924,-9.08164l19.0924,9.08164l4.71573,20.40623l-13.21273,16.36463l-21.1908,0l-13.21264,-16.36463z"
@@ -18,15 +18,14 @@ const Logo = () => {
           <text
             transform="matrix(1.24086 0 0 1.24086 -325.034 -159.266)"
             stroke="#000"
-            font-style="normal"
-            font-weight="normal"
-            text-anchor="start"
-            font-family="sans-serif"
-            font-size="31"
-            id="svg_3"
+            fontStyle="normal"
+            fontWeight="normal"
+            textAnchor="start"
+            fontFamily="sans-serif"
+            fontSize="31"
             y="160.88533"
             x="273.5261"
-            stroke-width="0"
+            strokeWidth="0"
             fill="#39b874"
           >
             Z

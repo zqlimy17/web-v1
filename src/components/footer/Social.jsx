@@ -44,7 +44,10 @@ const Wrapper = styled.aside`
   right: auto;
   bottom: 0;
   z-index: 3;
+
   ul {
+    padding: 0;
+    margin: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -61,7 +64,19 @@ const Wrapper = styled.aside`
   }
 
   ul li {
+    display: inherit;
+    transition: var(--transition);
     padding: 10px;
+  }
+
+  ul li a {
+    color: var(--primary);
+  }
+
+  ul li a:hover {
+    color: var(--secondary);
+    transform: translateY(-3px);
+    display: block;
   }
 `;
 

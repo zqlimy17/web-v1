@@ -10,7 +10,7 @@ const Hamburger = ({ open, setOpen }) => {
         onClick={() => {
           setOpen(!open);
         }}
-        style={{ animationDelay: "200ms" }}
+        style={{ animationDelay: "400ms" }}
       >
         <span className="hamburger-box">
           <span className="hamburger-inner"></span>

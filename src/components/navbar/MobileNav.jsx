@@ -17,8 +17,8 @@ const MobileNav = () => {
   return (
     <Wrapper>
       <Hamburger open={open} setOpen={setOpen} />
-      <aside id="aa" className={`${open ? "open" : ""}`}>
-        <ol>
+      <aside className={`${open ? "open" : ""}`}>
+        <ol class="mono">
           <li>
             <AnchorLink className="anchorLink" to="" title="About" stripHash />
           </li>
@@ -86,6 +86,7 @@ const Wrapper = styled.div`
     height: 60vh;
     flex-direction: column;
     justify-content: space-around;
+    font-size: 1.5em;
   }
 
   button {

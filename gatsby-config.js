@@ -59,5 +59,6 @@ module.exports = {
         layout: require.resolve(`./src/components/Layout.jsx`),
       },
     },
+    `gatsby-plugin-anchor-links`,
   ],
 };

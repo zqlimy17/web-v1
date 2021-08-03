@@ -18,7 +18,7 @@ const MobileNav = () => {
     <Wrapper>
       <Hamburger open={open} setOpen={setOpen} />
       <aside className={`${open ? "open" : ""}`}>
-        <ol class="mono">
+        <ol className="mono">
           <li>
             <AnchorLink className="anchorLink" to="" title="About" stripHash />
           </li>
@@ -93,7 +93,7 @@ const Wrapper = styled.div`
     padding: 15px;
   }
 
-  @media only screen and (max-width: 480px) {
+  @media only screen and (max-width: 768px) {
     display: flex;
   }
 `;

@@ -2,11 +2,19 @@ import React from "react";
 import Intro from "../components/sections/Intro";
 
 import styled from "styled-components";
+import AboutMe from "../components/sections/AboutMe";
+import FeaturedPortfolio from "../components/sections/FeaturedPortfolio";
+import PortfolioList from "../components/sections/PortfolioList";
+import GetInTouch from "../components/sections/GetInTouch";
 
 const Main = () => {
   return (
     <Wrapper>
       <Intro />
+      <AboutMe />
+      <FeaturedPortfolio />
+      <PortfolioList />
+      <GetInTouch />
     </Wrapper>
   );
 };

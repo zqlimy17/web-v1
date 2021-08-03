@@ -6,16 +6,40 @@ import styled from "styled-components";
 const Footer = () => {
   return (
     <Wrapper>
-      <Social />
-      <Email />
+      <div>
+        <Social />
+        <Email />
+      </div>
+      <p className="mono">
+        Design inspired by{" "}
+        <a
+          href="https://brittanychiang.com/"
+          target="_blank"
+          rel="noreferrer nofollow"
+        >
+          Brittany Chiang
+        </a>
+        . Built by Zack Lim.
+      </p>
     </Wrapper>
   );
 };
 
 const Wrapper = styled.footer`
-  z-index: 1;
-  position: sticky;
-  bottom: 0;
+  div {
+    z-index: 1;
+    position: sticky;
+    bottom: 0;
+  }
+
+  p {
+    text-align: center;
+    color: var(--primary);
+  }
+
+  @media only screen and (max-width: 768px) {
+    position: relative;
+  }
 `;
 
 export default Footer;

@@ -49,5 +49,9 @@ const Wrapper = styled.aside`
     background-color: var(--primary);
     margin-top: 10px;
   }
+
+  @media only screen and (max-width: 768px) {
+    display: none;
+  }
 `;
 export default Email;

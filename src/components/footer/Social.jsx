@@ -78,6 +78,22 @@ const Wrapper = styled.aside`
     transform: translateY(-3px);
     display: block;
   }
+
+  @media only screen and (max-width: 768px) {
+    width: 100%;
+    position: relative;
+    left: auto;
+    right: auto;
+
+    ul {
+      flex-direction: row;
+      justify-content: center;
+    }
+
+    ul:after {
+      display: none;
+    }
+  }
 `;
 
 export default Social;

@@ -13,7 +13,7 @@ const Intro = () => {
           <h1 className="heading">Zack Lim.</h1>
         </div>
         <div className="bold">
-          <h2 className="heading">I like to build friendly interfaces.</h2>
+          <h2 className="heading">I build friendly interfaces.</h2>
         </div>
         <div>
           <p>
@@ -34,6 +34,7 @@ const Intro = () => {
 };
 
 const Wrapper = styled.section`
+  transition: var(--slow-transition);
   display: flex;
   -webkit-box-pack: center;
   justify-content: center;
@@ -43,6 +44,8 @@ const Wrapper = styled.section`
   min-height: 100vh;
   padding: 0px;
   margin-top: -100px;
+  margin-left: 150px;
+  margin-right: 150px;
 
   h1 {
     font-size: clamp(40px, 6vw, 75px);
@@ -72,6 +75,19 @@ const Wrapper = styled.section`
   button:hover {
     color: var(--secondary);
     background: var(--tint-secondary);
+  }
+
+  @media only screen and (max-width: 1040px) {
+    margin-left: 100px;
+    margin-right: 100px;
+  }
+  @media only screen and (max-width: 768px) {
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+  @media only screen and (max-width: 480px) {
+    margin-left: 0;
+    margin-right: 0;
   }
 `;
 

@@ -77,7 +77,7 @@ const Wrapper = styled.section`
     background: var(--tint-secondary);
   }
 
-  @media only screen and (max-width: 1040px) {
+  @media only screen and (max-width: 1440px) {
     margin-left: 100px;
     margin-right: 100px;
   }

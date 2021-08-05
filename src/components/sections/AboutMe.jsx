@@ -80,7 +80,7 @@ const AboutMe = () => {
 
 const Wrapper = styled.section`
   max-width: 900px;
-  margin: 0 auto;
+  margin: 100px auto;
   transition: var(--transition);
 
   .container {

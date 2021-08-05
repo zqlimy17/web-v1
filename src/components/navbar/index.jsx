@@ -20,7 +20,6 @@ const Navbar = () => {
 };
 
 const Wrapper = styled.header`
-  overflow: hidden;
   position: sticky;
   top: 0;
   display: flex;

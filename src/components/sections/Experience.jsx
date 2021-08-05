@@ -26,13 +26,15 @@ const Experience = () => {
     <Wrapper>
       <h2 className="numbered-headings">Experience</h2>
       <div className="container">
-        <StyledTabList>
+        <StyledTabNav activeTab={activeTab} />
+        <StyledTabList length={experiences.length}>
           {experiences &&
             experiences.map((experience, index) => {
               const { company } = experience;
               return (
                 <StyledTabButton
                   key={index}
+                  className={`${activeTab === index ? "active" : ""} bold`}
                   onClick={() => {
                     setActiveTab(index);
                   }}
@@ -89,11 +91,62 @@ const Wrapper = styled.section`
   margin: 0 auto;
   .container {
     display: flex;
+    @media only screen and (max-width: 600px) {
+      flex-direction: column;
+    }
   }
 `;
 
-const StyledTabList = styled.div``;
-const StyledTabButton = styled.button``;
+const StyledTabList = styled.div`
+  height: 100%;
+  border-left: 2px solid var(--dark-secondary);
+  @media only screen and (max-width: 600px) {
+    width: calc(${({ length }) => length} * 120px);
+    display: flex;
+    overflow-x: auto;
+    border-left: none;
+    border-bottom: 2px solid var(--dark-secondary);
+    margin-bottom: 20px;
+  }
+`;
+
+const StyledTabButton = styled.button`
+  background: none;
+  border: none;
+  width: 120px;
+  min-width: 120px;
+  height: 40px;
+  color: var(--primary);
+  transition: var(--transition);
+  :hover {
+    background-color: var(--tint-secondary);
+  }
+  &.active {
+    color: var(--secondary);
+    background-color: var(--tint-secondary);
+  }
+
+  @media only screen and (max-width: 600px) {
+  }
+`;
+
+const StyledTabNav = styled.div`
+  content: "";
+  height: 40px;
+  position: absolute;
+  width: 2px;
+  background-color: var(--secondary);
+  transform: translateY(calc(${({ activeTab }) => activeTab} * 40px));
+  transition: var(--transition);
+  transition-delay: 100ms;
+  z-index: 3;
+  @media only screen and (max-width: 600px) {
+    transform: translate(calc(${({ activeTab }) => activeTab} * 120px), 40px);
+    width: 120px;
+    height: 2px;
+  }
+`;
+
 const StyledTabPanels = styled.div`
   margin-left: 25px;
   @media only screen and (max-width: 600px) {
@@ -102,7 +155,7 @@ const StyledTabPanels = styled.div`
 `;
 const StyledTabPanel = styled.div`
   h3 {
-    line-height: 0;
+    margin: 0;
   }
   p {
     line-height: 0;

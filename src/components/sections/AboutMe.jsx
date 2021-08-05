@@ -117,6 +117,7 @@ const Wrapper = styled.section`
     }
 
     .container {
+      display: flex;
       flex-direction: column-reverse;
     }
   }
@@ -132,6 +133,7 @@ const StyledImg = styled.div`
   position: relative;
 
   .imgWrapper {
+    margin: 0 auto;
     display: block;
     position: relative;
     border: none;
@@ -180,7 +182,7 @@ const StyledImg = styled.div`
     }
   }
   @media only screen and (max-width: 768px) {
-    margin: 0 auto 40px;
+    margin: 0 auto;
     max-width: 100%;
 
     .imgWrapper .img {

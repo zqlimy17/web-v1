@@ -19,7 +19,8 @@ const Footer = () => {
         >
           Brittany Chiang
         </a>
-        . Built by Zack Lim.
+        . <br className="mobile-break" />
+        Built by Zack Lim.
       </p>
     </Wrapper>
   );
@@ -37,7 +38,13 @@ const Wrapper = styled.footer`
     color: var(--primary);
   }
 
+  .mobile-break {
+    display: none;
+  }
   @media only screen and (max-width: 768px) {
+    .mobile-break {
+      display: block;
+    }
     position: relative;
   }
 `;

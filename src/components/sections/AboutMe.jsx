@@ -79,52 +79,27 @@ const AboutMe = () => {
 };
 
 const Wrapper = styled.section`
-  /* * {
-    outline: 1px solid lime;
-    outline-offset: -1px;
-  } */
-  max-width: 920px;
+  max-width: 900px;
   margin: 0 auto;
-  padding: 100px 0;
   transition: var(--transition);
 
   .container {
-    display: flex;
-    justify-content: space-between;
-  }
-
-  #about-content {
-    max-width: 500px;
-  }
-
-  .text-container {
-    font-size: 14px;
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    grid-gap: 50px;
+    @media (max-width: 768px) {
+      display: block;
+    }
   }
 
   ul {
     display: grid;
     grid-template-columns: repeat(2, minmax(140px, 200px));
     gap: 0px 10px;
-    padding: 0px;
-    margin: 20px 0px 0px;
-    overflow: hidden;
-    list-style: none;
-    color: var(--primary);
-    font-size: 1.1em;
   }
 
-  ul li {
-    position: relative;
-    margin-bottom: 10px;
-    padding-left: 20px;
-  }
-
-  ul li::before {
-    content: "▹";
-    position: absolute;
-    left: 0px;
-    color: var(--secondary);
-    line-height: 12px;
+  #about-content {
+    display: block;
   }
 
   @media only screen and (max-width: 1040px) {
@@ -134,10 +109,11 @@ const Wrapper = styled.section`
   }
 
   @media only screen and (max-width: 768px) {
-    padding: 50px 0;
-
+    #about-content {
+      max-width: 100%;
+    }
     h2::after {
-      width: 200px;
+      width: 100%;
     }
 
     .container {
@@ -154,12 +130,12 @@ const Wrapper = styled.section`
 
 const StyledImg = styled.div`
   position: relative;
-  max-width: 300px;
 
   .imgWrapper {
     display: block;
     position: relative;
     border: none;
+    max-width: 300px;
     width: 100%;
     background-color: var(--light-secondary);
     &:hover,
@@ -205,6 +181,8 @@ const StyledImg = styled.div`
   }
   @media only screen and (max-width: 768px) {
     margin: 0 auto 40px;
+    max-width: 100%;
+
     .imgWrapper .img {
       mix-blend-mode: normal;
       filter: none;

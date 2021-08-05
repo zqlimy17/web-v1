@@ -20,6 +20,7 @@ const Navbar = () => {
 };
 
 const Wrapper = styled.header`
+  overflow: hidden;
   position: sticky;
   top: 0;
   display: flex;
@@ -30,6 +31,7 @@ const Wrapper = styled.header`
   align-items: center;
   width: 100%;
   z-index: 2;
+  backdrop-filter: blur(4px);
 
   nav {
     margin: 0 50px;

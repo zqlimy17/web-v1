@@ -15,7 +15,7 @@ const Resume = () => {
 const Wrapper = styled.div`
   button {
     border: 1px solid var(--secondary);
-    border-radius: 5px;
+    /* border-radius: 5px; */
     padding: 0.5rem;
     background: none;
     color: var(--primary);

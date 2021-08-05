@@ -18,8 +18,7 @@
 }
 
 body {
-  counter-reset: navItem;
-  counter-reset: numeredHeadings;
+  counter-reset: navItem numberedHeadings;
   font-family: "Montserrat", sans-serif;
   font-weight: normal;
   word-wrap: break-word;
@@ -27,6 +26,8 @@ body {
   -webkit-font-smoothing: antialiased;
   color: var(--primary);
   background-color: var(--dark-purple);
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 body.blur main > * {
@@ -50,7 +51,7 @@ p {
   line-height: 1.5;
 }
 
-p > a {
+main a {
   color: var(--secondary);
   display: inline-block;
   text-decoration: none;
@@ -58,17 +59,17 @@ p > a {
   transition: var(--transition);
 }
 
-p > a:hover {
+main a:hover {
   outline: 0px;
 }
 
-p > a:hover::after,
-p > a:focus::after,
-p > a:active::after {
+main a:hover::after,
+main a:focus::after,
+main a:active::after {
   width: 100%;
 }
 
-p > a::after {
+main a::after {
   content: "";
   display: block;
   width: 0px;
@@ -78,10 +79,6 @@ p > a::after {
   background-color: var(--secondary);
   transition: var(--transition);
   opacity: 0.5;
-}
-
-ul {
-  list-style: none;
 }
 
 ol {
@@ -118,6 +115,30 @@ ol li .anchorLink::before {
   text-align: right;
 }
 
+ul {
+  padding: 0px;
+  margin: 20px 0px 0px;
+  overflow: hidden;
+  list-style: none;
+  color: var(--primary);
+  font-size: 1.1em;
+}
+
+ul li {
+  position: relative;
+  margin-bottom: 10px;
+  padding-left: 20px;
+}
+
+main ul li::before {
+  content: "▹";
+  position: absolute;
+  top: 10%;
+  left: 0px;
+  color: var(--secondary);
+  line-height: 12px;
+}
+
 .numbered-headings {
   display: flex;
   width: 100%;
@@ -145,13 +166,16 @@ ol li .anchorLink::before {
   background-color: var(--dark-secondary);
 }
 
+.range {
+  font-family: monospace;
+}
+
 .bold {
   font-family: "Mosk";
 }
 
 .mono {
   font-family: monospace;
-  color: var(--secondary);
 }
 @keyframes fade {
   from {
@@ -168,6 +192,21 @@ ol li .anchorLink::before {
   animation-name: fade;
   animation-duration: 1000ms;
   animation-fill-mode: backwards;
+}
+
+.fade-enter {
+  opacity: 0;
+}
+.fade-enter-active {
+  opacity: 1;
+  transition: opacity 500ms var(--easing);
+}
+.fade-exit {
+  opacity: 1;
+}
+.fade-exit-active {
+  opacity: 0;
+  transition: opacity 500ms var(--easing);
 }
 
 @media only screen and (max-width: 768px) {

@@ -3,6 +3,7 @@ import Intro from "../components/sections/Intro";
 
 import styled from "styled-components";
 import AboutMe from "../components/sections/AboutMe";
+import Experience from "../components/sections/Experience";
 import FeaturedPortfolio from "../components/sections/FeaturedPortfolio";
 import PortfolioList from "../components/sections/PortfolioList";
 import GetInTouch from "../components/sections/GetInTouch";
@@ -12,6 +13,7 @@ const Main = () => {
     <Wrapper>
       <Intro />
       <AboutMe />
+      <Experience />
       <FeaturedPortfolio />
       <PortfolioList />
       <GetInTouch />

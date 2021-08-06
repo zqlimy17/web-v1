@@ -4,6 +4,14 @@
   outline-offset: -1px;
 } */
 
+html {
+  overflow-x: auto;
+}
+
+html.open {
+  overflow: hidden;
+}
+
 :root {
   --dark-purple: #121f1f;
   --primary: #e6e6fa;

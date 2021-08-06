@@ -10,8 +10,8 @@ const MobileNav = () => {
 
   useEffect(() => {
     open
-      ? document.body.classList.add("blur")
-      : document.body.classList.remove("blur");
+      ? document.documentElement.classList.add("open")
+      : document.documentElement.classList.remove("open");
   }, [open]);
 
   return (

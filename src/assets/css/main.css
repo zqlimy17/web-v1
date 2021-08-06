@@ -4,6 +4,11 @@
   outline-offset: -1px;
 } */
 
+* {
+  margin: 0;
+  padding: 0;
+}
+
 html {
   overflow-x: auto;
 }
@@ -17,7 +22,7 @@ html.open {
   --primary: #e6e6fa;
   --secondary: #39b874;
   --light-secondary: #90ee90;
-  --dark-secondary: #276b47;
+  --dark-secondary: #1a2d2d;
   --tint-secondary: rgba(39, 107, 71, 0.2);
   --border-radius: 4px;
   --transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
@@ -57,6 +62,7 @@ a {
 
 p {
   line-height: 1.5;
+  margin-bottom: 1rem;
 }
 
 main a,
@@ -177,7 +183,7 @@ main ul li::before {
   width: 300px;
   height: 1px;
   margin-left: 20px;
-  background-color: var(--dark-secondary);
+  background-color: var(--secondary);
 }
 
 .range {

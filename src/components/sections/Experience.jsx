@@ -162,7 +162,6 @@ const StyledTabPanel = styled.div`
     margin: 0;
   }
   p {
-    line-height: 0;
     margin-bottom: 25px;
   }
 `;

@@ -51,7 +51,8 @@ p {
   line-height: 1.5;
 }
 
-main a {
+main a,
+footer a {
   color: var(--secondary);
   display: inline-block;
   text-decoration: none;
@@ -59,17 +60,22 @@ main a {
   transition: var(--transition);
 }
 
-main a:hover {
+main a:hover,
+footer a:hover {
   outline: 0px;
 }
 
 main a:hover::after,
 main a:focus::after,
-main a:active::after {
+main a:active::after,
+footer a:hover::after,
+footer a:focus::after,
+footer a:active::after {
   width: 100%;
 }
 
-main a::after {
+main a::after,
+footer a::after {
   content: "";
   display: block;
   width: 0px;

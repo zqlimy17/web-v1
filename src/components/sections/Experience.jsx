@@ -89,6 +89,10 @@ const Wrapper = styled.section`
   padding: 100px 0;
   max-width: 768px;
   margin: 0 auto;
+
+  @media only screen and (max-width: 768px) {
+    padding: 25px 0;
+  }
   .container {
     display: flex;
     @media only screen and (max-width: 600px) {

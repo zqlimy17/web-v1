@@ -23,7 +23,7 @@ const Experience = () => {
   const [activeTab, setActiveTab] = useState(0);
 
   return (
-    <Wrapper>
+    <Wrapper id="experience">
       <h2 className="numbered-headings">Experience</h2>
       <div className="container">
         <StyledTabNav activeTab={activeTab} />

@@ -43,6 +43,11 @@ const PortfolioList = () => {
 
   const [showMore, setShowMore] = useState(false);
 
+  const handleLink = (demo) => {
+    if (demo) {
+      window.open(demo);
+    }
+  };
   return (
     <Wrapper>
       <h2>Other Noteworthy Projects</h2>
@@ -85,40 +90,33 @@ const PortfolioList = () => {
                 multiplier={demo ? 1 : 0}
                 style={style}
                 hidden={show === "hide"}
+                onClick={() => {
+                  handleLink(demo);
+                }}
               >
-                <a
-                  href={demo}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={demo ? "link" : "no-link"}
-                >
-                  <p className="overline mono">{formattedDate}</p>
-                  <div className="linksContainer">
-                    <h3 className="bold">{title}</h3>
-                    <div className="links">
-                      {git ? (
-                        <a href={git} target="_blank" rel="noopener noreferrer">
-                          <FaGithub size={"1.25em"} />
-                        </a>
-                      ) : (
-                        false
-                      )}
-                      {demo ? (
-                        <a
-                          href={demo}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          <FaExternalLinkAlt size={"1.25em"} />
-                        </a>
-                      ) : (
-                        false
-                      )}
-                    </div>
+                <p className="overline mono">{formattedDate}</p>
+                <div className="linksContainer">
+                  <h3 className="bold">{title}</h3>
+                  <div className="links"></div>
+                  <div className="links">
+                    {git ? (
+                      <a href={git} target="_blank" rel="noopener noreferrer">
+                        <FaGithub size={"1.25em"} />
+                      </a>
+                    ) : (
+                      false
+                    )}
+                    {demo ? (
+                      <a href={demo} target="_blank" rel="noopener noreferrer">
+                        <FaExternalLinkAlt size={"1.25em"} />
+                      </a>
+                    ) : (
+                      false
+                    )}
                   </div>
-                  <p>{about}</p>
-                  <p className="mono">{technologies}</p>
-                </a>
+                </div>
+                <p>{about}</p>
+                <p className="mono">{technologies}</p>
               </StyledCard>
             </CSSTransition>
           );
@@ -137,7 +135,7 @@ const PortfolioList = () => {
 
 const Wrapper = styled.section`
   max-width: 1000px;
-  margin: 0 auto;
+  margin: 50px auto;
   text-align: center;
   h2 {
     margin-bottom: 40px;
@@ -168,6 +166,7 @@ const StyledList = styled.div`
 `;
 
 const StyledCard = styled.div`
+  cursor: pointer;
   text-align: left;
   background-color: var(--dark-secondary);
   border-radius: var(--border-radius);
@@ -180,23 +179,7 @@ const StyledCard = styled.div`
       color: var(--secondary);
     }
   }
-  .link,
-  .no-link {
-    color: var(--primary);
-    &::after {
-      display: none;
-    }
-  }
-
-  .no-link {
-    cursor: default;
-    transform: none;
-    &:hover {
-      transform: none;
-      h3 {
-        color: var(--primary);
-      }
-    }
+  
   }
 
   h3 {

@@ -5,8 +5,12 @@ import Hamburger from "./Hamburger";
 import { AnchorLink } from "gatsby-plugin-anchor-links";
 import Resume from "../Resume";
 
+import { capitalize } from "../../utils/capitalize";
+
 const MobileNav = () => {
   const [open, setOpen] = useState(false);
+
+  const navLinks = ["about", "experience", "portfolio", "contact"];
 
   useEffect(() => {
     open
@@ -19,33 +23,22 @@ const MobileNav = () => {
       <Hamburger open={open} setOpen={setOpen} />
       <aside className={`${open ? "open" : ""}`}>
         <ol className="mono">
-          <li>
-            <AnchorLink className="anchorLink" to="" title="About" stripHash />
-          </li>
-          <li>
-            <AnchorLink
-              className="anchorLink"
-              to=""
-              title="Experience"
-              stripHash
-            />
-          </li>
-          <li>
-            <AnchorLink
-              className="anchorLink"
-              to=""
-              title="Portfolio"
-              stripHash
-            />
-          </li>
-          <li>
-            <AnchorLink
-              className="anchorLink"
-              to=""
-              title="Contact"
-              stripHash
-            />
-          </li>
+          {navLinks.map((link) => {
+            console.log(link);
+            return (
+              <li key={link}>
+                <AnchorLink
+                  onAnchorLinkClick={() => {
+                    setOpen(false);
+                  }}
+                  className="anchorLink"
+                  to={`/#${link}`}
+                  title={capitalize(link)}
+                  stripHash
+                />
+              </li>
+            );
+          })}
         </ol>
         <Resume />
       </aside>

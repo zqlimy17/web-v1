@@ -5,7 +5,7 @@ import { StaticImage } from "gatsby-plugin-image";
 
 const AboutMe = () => {
   return (
-    <Wrapper>
+    <Wrapper id="about">
       <h2 className="numbered-headings">About Me</h2>
       <div className="container">
         <div id="about-content">

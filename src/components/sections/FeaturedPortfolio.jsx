@@ -42,7 +42,7 @@ const FeaturedPortfolio = () => {
   const featuredPortfolios = data.allContentfulPortfolio.nodes;
 
   return (
-    <Wrapper>
+    <Wrapper id="portfolio">
       <h2 className="numbered-headings">Some Things I’ve Built</h2>
       {featuredPortfolios.map((featuredPortfolio, index) => {
         const {

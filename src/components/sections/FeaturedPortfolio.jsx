@@ -1,11 +1,12 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import styled from "styled-components";
 
 import { useStaticQuery, graphql } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
-
+import { srConfig } from "../../config";
+import sr from "../../utils/sr";
 const query = graphql`
   {
     allContentfulPortfolio(
@@ -38,11 +39,20 @@ const query = graphql`
 `;
 
 const FeaturedPortfolio = () => {
+  const revealContainer = useRef(null);
+  const revealProjects = useRef([]);
+
+  useEffect(() => {
+    sr.reveal(revealContainer.current, srConfig());
+    revealProjects.current.forEach((ref, i) =>
+      sr.reveal(ref, srConfig(i * 100))
+    );
+  });
   const data = useStaticQuery(query);
   const featuredPortfolios = data.allContentfulPortfolio.nodes;
 
   return (
-    <Wrapper id="portfolio">
+    <Wrapper id="portfolio" ref={revealContainer}>
       <h2 className="numbered-headings">Some Things I’ve Built</h2>
       {featuredPortfolios.map((featuredPortfolio, index) => {
         const {
@@ -65,7 +75,10 @@ const FeaturedPortfolio = () => {
         const pathToImage = getImage(featureImage);
 
         return (
-          <StyledPortfolio key={index}>
+          <StyledPortfolio
+            key={index}
+            ref={(el) => (revealProjects.current[index] = el)}
+          >
             <StyledInfo>
               <div>
                 <p className="mono overline">

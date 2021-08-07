@@ -1,8 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { CSSTransition } from "react-transition-group";
 
 import styled from "styled-components";
 import { useStaticQuery, graphql } from "gatsby";
+import { srConfig } from "../../config";
+import sr from "../../utils/sr";
 const query = graphql`
   {
     allContentfulExperience(sort: { fields: date, order: DESC }) {
@@ -17,13 +19,18 @@ const query = graphql`
   }
 `;
 const Experience = () => {
+  const revealContainer = useRef(null);
+
+  useEffect(() => {
+    sr.reveal(revealContainer.current, srConfig());
+  });
   const data = useStaticQuery(query);
   const experiences = data.allContentfulExperience.nodes;
 
   const [activeTab, setActiveTab] = useState(0);
 
   return (
-    <Wrapper id="experience">
+    <Wrapper id="experience" ref={revealContainer}>
       <h2 className="numbered-headings">Experience</h2>
       <div className="container">
         <StyledTabNav activeTab={activeTab} />

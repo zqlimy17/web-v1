@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 const Email = () => {
   return (
-    <Wrapper>
+    <Wrapper className="fadeup" style={{ animationDelay: "1700ms" }}>
       <div>
         <a className="mono" href="mailto:zqlimy@gmail.com">
           zqlimy@gmail.com

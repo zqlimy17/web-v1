@@ -207,11 +207,29 @@ main ul li::before {
     transform: translateY(0);
   }
 }
+@keyframes fadeup {
+  from {
+    opacity: 0.01;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade,
+.fadeup {
+  animation-duration: 1000ms;
+  animation-fill-mode: backwards;
+}
+
+.fadeup {
+  animation-name: fadeup;
+}
 
 .fade {
   animation-name: fade;
-  animation-duration: 1000ms;
-  animation-fill-mode: backwards;
 }
 
 .fade-enter {

@@ -13,7 +13,7 @@ const DesktopNav = () => {
         {navLinks.map((link, index) => {
           const style = { animationDelay: (index + 1) * 200 + "ms" };
           return (
-            <div className="fade" style={style}>
+            <div className="fade" style={style} key={index}>
               <li>
                 <AnchorLink
                   className="anchorLink"

@@ -10,7 +10,7 @@ import styled from "styled-components";
 
 const Social = () => {
   return (
-    <Wrapper>
+    <Wrapper className="fadeup" style={{ animationDelay: "1600ms" }}>
       <ul>
         <li>
           <a href="" target="_blank" rel="noopener noreferrer">

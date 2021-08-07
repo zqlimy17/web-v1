@@ -1,9 +1,14 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import styled from "styled-components";
-
+import { srConfig } from "../../config";
+import sr from "../../utils/sr";
 const GetInTouch = () => {
+  const revealContainer = useRef(null);
+  useEffect(() => {
+    sr.reveal(revealContainer.current, srConfig());
+  });
   return (
-    <Wrapper id="contact">
+    <Wrapper id="contact" ref={revealContainer}>
       <p className="mono overline numbered-headings">What's next?</p>
       <h2 className="bold">Get In Touch</h2>
       <p>

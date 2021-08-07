@@ -1,11 +1,18 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import styled from "styled-components";
 
 import { StaticImage } from "gatsby-plugin-image";
+import { srConfig } from "../../config";
+import sr from "../../utils/sr";
 
 const AboutMe = () => {
+  const revealContainer = useRef(null);
+
+  useEffect(() => {
+    sr.reveal(revealContainer.current, srConfig());
+  });
   return (
-    <Wrapper id="about">
+    <Wrapper id="about" ref={revealContainer}>
       <h2 className="numbered-headings">About Me</h2>
       <div className="container">
         <div id="about-content">

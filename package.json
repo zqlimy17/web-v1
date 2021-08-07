@@ -36,6 +36,7 @@
     "react-helmet": "^6.1.0",
     "react-icons": "^4.2.0",
     "react-transition-group": "^2.9.0",
+    "scrollreveal": "^4.0.9",
     "slugify": "^1.6.0",
     "styled-components": "^5.3.0"
   },

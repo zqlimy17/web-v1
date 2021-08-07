@@ -6,26 +6,26 @@ const Intro = () => {
   return (
     <Wrapper>
       <div>
-        <div className="mono">
+        <div className="mono fadeup" style={{ animationDelay: "1000ms" }}>
           <p>Hey there, my name is</p>
         </div>
-        <div className="bold">
+        <div className="bold fadeup" style={{ animationDelay: "1100ms" }}>
           <h1 className="heading">Zack Lim.</h1>
         </div>
-        <div className="bold">
+        <div className="bold fadeup" style={{ animationDelay: "1200ms" }}>
           <h2 className="heading">I build friendly interfaces.</h2>
         </div>
         <div>
-          <p>
+          <p className="fadeup" style={{ animationDelay: "1300ms" }}>
             I am a full-stack software developer with a passion for dynamic
             development and high quality codes.
           </p>
-          <p>
+          <p className="fadeup" style={{ animationDelay: "1400ms" }}>
             Currently, I'm focused on building accessible Shopify fronts at{" "}
             <a href="https://eatirvins.sg">IRVINS</a>.
           </p>
         </div>
-        <div>
+        <div className="fadeup" style={{ animationDelay: "1500ms" }}>
           <button>Get in touch.</button>
         </div>
       </div>

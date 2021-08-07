@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { graphql, useStaticQuery } from "gatsby";
 import styled from "styled-components";
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 
 import { CSSTransition } from "react-transition-group";
-
+import { srConfig } from "../../config";
+import sr from "../../utils/sr";
 const query = graphql`
   {
     allContentfulPortfolio(
@@ -38,6 +39,10 @@ const query = graphql`
 `;
 
 const PortfolioList = () => {
+  const revealContainer = useRef(null);
+  useEffect(() => {
+    sr.reveal(revealContainer.current, srConfig());
+  });
   const data = useStaticQuery(query);
   const projects = data.allContentfulPortfolio.nodes;
 
@@ -49,7 +54,7 @@ const PortfolioList = () => {
     }
   };
   return (
-    <Wrapper>
+    <Wrapper ref={revealContainer}>
       <h2>Other Noteworthy Projects</h2>
       {/* <p className="mono">
         <a>View the archive</a>

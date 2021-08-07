@@ -69,32 +69,43 @@ const FeaturedPortfolio = () => {
         return (
           <StyledPortfolio key="index">
             <StyledInfo>
-              <p className="mono overline">Featured Project {formattedDate}</p>
-              <h3 className="bold">{title}</h3>
-              <div className="description">
-                <p>{about}</p>
-              </div>
-              <p className="mono">{technologies}</p>
-              <div className="links">
-                {git ? (
-                  <a href={git} target="_blank" rel="noopener noreferrer">
-                    <FaGithub size={28} />
-                  </a>
-                ) : (
-                  false
-                )}
+              <div>
+                <p className="mono overline">
+                  Featured Project {formattedDate}
+                </p>
                 {demo ? (
                   <a href={demo} target="_blank" rel="noopener noreferrer">
-                    <FaExternalLinkAlt size={28} />
+                    <h3 className="bold">{title}</h3>
                   </a>
                 ) : (
-                  false
+                  <h3 className="bold">{title}</h3>
                 )}
+                <div className="description">
+                  <p>{about}</p>
+                </div>
+                <p className="mono">{technologies}</p>
+                <div className="links">
+                  {git ? (
+                    <a href={git} target="_blank" rel="noopener noreferrer">
+                      <FaGithub size={"1.25em"} />
+                    </a>
+                  ) : (
+                    false
+                  )}
+                  {demo ? (
+                    <a href={demo} target="_blank" rel="noopener noreferrer">
+                      <FaExternalLinkAlt size={"1.25em"} />
+                    </a>
+                  ) : (
+                    false
+                  )}
+                </div>
               </div>
             </StyledInfo>
             <StyledImage>
               <div className="imgWrapper">
                 <GatsbyImage
+                  className="gatsbyWrapper"
                   image={pathToImage}
                   alt={title}
                   imgClassName="img"
@@ -111,6 +122,9 @@ const FeaturedPortfolio = () => {
 const Wrapper = styled.section`
   max-width: 900px;
   margin: 100px auto;
+  @media only screen and (max-width: 768px) {
+    margin: 50px auto;
+  }
 `;
 
 const StyledPortfolio = styled.article`
@@ -123,12 +137,35 @@ const StyledPortfolio = styled.article`
     }
   }
   margin-bottom: 100px;
+
+  @media only screen and (max-width: 768px) {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 10px;
+    margin-bottom: 50px;
+    &:nth-of-type(even) {
+      div {
+        text-align: left;
+        float: unset;
+      }
+    }
+  }
 `;
+
 const StyledInfo = styled.div`
   flex: 1;
   flex-grow: 1;
   .overline {
     margin: 5px 0;
+    color: var(--secondary);
+  }
+
+  a {
+    text-decoration: none;
+    color: var(--primary);
+  }
+
+  a:hover {
     color: var(--secondary);
   }
 
@@ -144,7 +181,17 @@ const StyledInfo = styled.div`
     p {
       margin: 0;
     }
+
+    @media only screen and (max-width: 768px) {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      background-color: unset;
+      padding: 0;
+      opacity: 1;
+    }
   }
+
   .links {
     margin-left: -10px;
     a {
@@ -158,7 +205,17 @@ const StyledInfo = styled.div`
       }
     }
   }
+
+  @media only screen and (max-width: 768px) {
+    display: flex;
+    align-items: center;
+    padding: 30px;
+    z-index: 2;
+    grid-column: 1 / -1;
+    grid-area: 1 / 1 / -1 / -1;
+  }
 `;
+
 const StyledImage = styled.div`
   flex: 1;
   flex-grow: 2;
@@ -182,11 +239,15 @@ const StyledImage = styled.div`
         mix-blend-mode: normal;
       }
     }
+    .gatsbyWrapper {
+      height: 100%;
+    }
     .img {
       mix-blend-mode: multiply;
       filter: grayscale(100%) contrast(1);
       transition: var(--transition);
     }
+
     &:before {
       content: "";
       display: block;
@@ -195,12 +256,31 @@ const StyledImage = styled.div`
       height: 100%;
       transition: var(--transition);
     }
+
     &:before {
       top: 0;
       left: 0;
       background-color: var(--light-secondary);
       mix-blend-mode: screen;
     }
+
+    @media only screen and (max-width: 768px) {
+      height: 100%;
+      z-index: 1;
+      background-color: var(--dark-secondary);
+      &:before {
+        background-color: var(--dark-secondary);
+        mix-blend-mode: screen;
+      }
+    }
+  }
+  @media only screen and (max-width: 768px) {
+    box-shadow: 0 0 30px -15px var(--secondary);
+    border: 1px solid;
+    opacity: 0.6;
+    display: block;
+    grid-column: 1/ -1;
+    grid-area: 1 / 1 / -1 / -1;
   }
 `;
 

@@ -5,7 +5,7 @@ import styled from "styled-components";
 import { useStaticQuery, graphql } from "gatsby";
 const query = graphql`
   {
-    allContentfulExperience(sort: { fields: createdAt, order: DESC }) {
+    allContentfulExperience(sort: { fields: date, order: DESC }) {
       nodes {
         company
         description
@@ -60,13 +60,17 @@ const Experience = () => {
                   <StyledTabPanel hidden={activeTab !== index}>
                     <h3>
                       {title}{" "}
-                      <a
-                        href={companyUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        @ {company}
-                      </a>
+                      {companyUrl ? (
+                        <a
+                          href={companyUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          @ {company}
+                        </a>
+                      ) : (
+                        <>@ {company}</>
+                      )}
                     </h3>
 
                     <p className="range">{range}</p>

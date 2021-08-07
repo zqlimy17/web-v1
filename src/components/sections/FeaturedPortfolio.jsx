@@ -45,8 +45,6 @@ const FeaturedPortfolio = () => {
     <Wrapper>
       <h2 className="numbered-headings">Some Things I’ve Built</h2>
       {featuredPortfolios.map((featuredPortfolio, index) => {
-        console.log(featuredPortfolio);
-
         const {
           title,
           about: { about },
@@ -67,7 +65,7 @@ const FeaturedPortfolio = () => {
         const pathToImage = getImage(featureImage);
 
         return (
-          <StyledPortfolio key="index">
+          <StyledPortfolio key={index}>
             <StyledInfo>
               <div>
                 <p className="mono overline">
@@ -178,11 +176,13 @@ const StyledInfo = styled.div`
     opacity: 0.9;
     background-color: var(--dark-secondary);
     border-radius: var(--border-radius);
+    box-shadow: 0 0 5px var(--light-secondary);
     p {
       margin: 0;
     }
 
     @media only screen and (max-width: 768px) {
+      box-shadow: none;
       display: flex;
       align-items: center;
       width: 100%;
@@ -275,8 +275,7 @@ const StyledImage = styled.div`
     }
   }
   @media only screen and (max-width: 768px) {
-    box-shadow: 0 0 30px -15px var(--secondary);
-    border: 1px solid;
+    box-shadow: 0 0 5px var(--light-secondary);
     opacity: 0.6;
     display: block;
     grid-column: 1/ -1;

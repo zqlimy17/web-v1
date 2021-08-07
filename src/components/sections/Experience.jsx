@@ -49,7 +49,6 @@ const Experience = () => {
             experiences.map((experience, index) => {
               const { title, company, description, range, companyUrl } =
                 experience;
-              console.log(experience);
               return (
                 <CSSTransition
                   key={index}

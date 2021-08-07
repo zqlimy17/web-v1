@@ -71,6 +71,9 @@ const Wrapper = styled.aside`
 
   ul li a {
     color: var(--primary);
+    &::after {
+      display: none;
+    }
   }
 
   ul li a:hover {

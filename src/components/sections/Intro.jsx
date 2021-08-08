@@ -63,7 +63,6 @@ const Wrapper = styled.section`
 
   button {
     margin-top: 24px;
-    /* border-radius: 5px; */
     border: 1px solid var(--secondary);
     padding: 1rem;
     background: none;

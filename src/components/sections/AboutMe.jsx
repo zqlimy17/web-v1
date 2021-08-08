@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from "react";
+import { Link } from "gatsby";
 import styled from "styled-components";
 
 import { StaticImage } from "gatsby-plugin-image";
@@ -67,6 +68,12 @@ const AboutMe = () => {
               <li>NodeJS</li>
             </ul>
           </div>
+          <p className="link">
+            <Link to="/about">View Photo Gallery</Link>
+          </p>
+          {/* <p className="link">
+            <Link to="/scribbles">View Scribbles</Link>
+          </p> */}
         </div>
         <StyledImg>
           <div className="imgWrapper">
@@ -107,6 +114,10 @@ const Wrapper = styled.section`
 
   #about-content {
     display: block;
+    .link {
+      margin-top: 10px;
+      margin-bottom: 0;
+    }
   }
 
   @media only screen and (max-width: 1040px) {

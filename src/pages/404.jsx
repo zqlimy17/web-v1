@@ -5,13 +5,15 @@ import styled from "styled-components";
 
 const NotFoundPage = () => {
   return (
-    <Wrapper>
-      <h1 className="bold">404</h1>
-      <h2>Aiyo, this page like broken leh!</h2>
-      <Link to={"/"} className="link">
-        <button>Go Home</button>
-      </Link>
-    </Wrapper>
+    <main>
+      <Wrapper>
+        <h1 className="bold">404</h1>
+        <h2>Aiyo, this page like broken leh!</h2>
+        <Link to={"/"} className="link">
+          <button>Go Home</button>
+        </Link>
+      </Wrapper>
+    </main>
   );
 };
 

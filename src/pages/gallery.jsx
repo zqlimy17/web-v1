@@ -71,7 +71,7 @@ const StyledGallery = styled.div`
 
 export const pageQuery = graphql`
   query GalleryQuery {
-    allFile(filter: { relativeDirectory: { eq: "" } }) {
+    allFile(filter: { relativeDirectory: { eq: "gallery" } }) {
       nodes {
         name
         childImageSharp {

@@ -10,24 +10,24 @@ import styled from "styled-components";
 
 const Social = () => {
   return (
-    <Wrapper className="fadeup" style={{ animationDelay: "1600ms" }}>
+    <Wrapper className="fadeup" style={{ animationDelay: "1200ms" }}>
       <ul>
-        <li>
+        <li className="fadeup" style={{ animationDelay: "1200ms" }}>
           <a href="" target="_blank" rel="noopener noreferrer">
             <FaGithub size={28} />
           </a>
         </li>
-        <li>
+        <li className="fadeup" style={{ animationDelay: "1300ms" }}>
           <a href="" target="_blank" rel="noopener noreferrer">
             <FaLinkedin size={28} />
           </a>
         </li>
-        <li>
+        <li className="fadeup" style={{ animationDelay: "1400ms" }}>
           <a href="" target="_blank" rel="noopener noreferrer">
             <FaInstagram size={28} />
           </a>
         </li>
-        <li>
+        <li className="fadeup" style={{ animationDelay: "1500ms" }}>
           <a href="" target="_blank" rel="noopener noreferrer">
             <FaHackerrank size={28} />
           </a>

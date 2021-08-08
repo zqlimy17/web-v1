@@ -200,7 +200,7 @@ main ul li::before {
 }
 @keyframes fade {
   from {
-    opacity: 0.01;
+    opacity: 0.001;
     transform: translateY(-20px);
   }
   to {
@@ -210,7 +210,7 @@ main ul li::before {
 }
 @keyframes fadeup {
   from {
-    opacity: 0.01;
+    opacity: 0.001;
     transform: translateY(20px);
   }
   to {

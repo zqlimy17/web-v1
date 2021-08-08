@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import Layout from "@components/Layout";
+
 import Intro from "@components/sections/Intro";
 import AboutMe from "@components/sections/AboutMe";
 import Experience from "@components/sections/Experience";
@@ -12,20 +12,18 @@ import SEO from "@components/SEO";
 
 const Main = () => {
   return (
-    <Layout>
-      <Wrapper>
-        <SEO
-          title="Zack Lim | Portfolio & Resume"
-          description="I am a full-stack software developer with a passion for dynamic development and high quality codes. Currently, I'm focused on building accessible Shopify fronts at IRVINS."
-        />
-        <Intro />
-        <AboutMe />
-        <Experience />
-        <FeaturedPortfolio />
-        <PortfolioList />
-        <GetInTouch />
-      </Wrapper>
-    </Layout>
+    <Wrapper>
+      <SEO
+        title="Zack Lim | Portfolio & Resume"
+        description="I am a full-stack software developer with a passion for dynamic development and high quality codes. Currently, I'm focused on building accessible Shopify fronts at IRVINS."
+      />
+      <Intro />
+      <AboutMe />
+      <Experience />
+      <FeaturedPortfolio />
+      <PortfolioList />
+      <GetInTouch />
+    </Wrapper>
   );
 };
 

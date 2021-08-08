@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { email } from "@config";
 const Email = () => {
   return (
-    <Wrapper className="fadeup" style={{ animationDelay: "1700ms" }}>
+    <Wrapper className="fadeup" style={{ animationDelay: "1400ms" }}>
       <div>
         <a className="mono" href={`mailto:${email}`}>
           {email}

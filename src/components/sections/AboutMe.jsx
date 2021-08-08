@@ -69,7 +69,7 @@ const AboutMe = () => {
             </ul>
           </div>
           <p className="link">
-            <Link to="/about">View Photo Gallery</Link>
+            <Link to="/gallery">View Photo Gallery</Link>
           </p>
           {/* <p className="link">
             <Link to="/scribbles">View Scribbles</Link>

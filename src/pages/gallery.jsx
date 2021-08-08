@@ -4,14 +4,14 @@ import React from "react";
 import styled from "styled-components";
 import _ from "lodash";
 
-const About = ({ data }) => {
+const Gallery = ({ data }) => {
   const images = _.shuffle(data.allFile.nodes);
   return (
     <main>
       <Wrapper>
         <h1>People</h1>
         <p>I've been sharpened by these people to be better.</p>
-        <Gallery>
+        <StyledGallery>
           {images.map((image, index) => {
             const path = getImage(image);
             const style = { animationDelay: index * 100 + 400 + "ms" };
@@ -21,7 +21,7 @@ const About = ({ data }) => {
               </div>
             );
           })}
-        </Gallery>
+        </StyledGallery>
       </Wrapper>
     </main>
   );
@@ -50,7 +50,7 @@ const Wrapper = styled.section`
   }
 `;
 
-const Gallery = styled.div`
+const StyledGallery = styled.div`
   line-height: 0;
   column-count: 5;
   column-gap: 0;
@@ -70,8 +70,8 @@ const Gallery = styled.div`
 `;
 
 export const pageQuery = graphql`
-  query AboutQuery {
-    allFile(filter: { relativeDirectory: { eq: "about" } }) {
+  query GalleryQuery {
+    allFile(filter: { relativeDirectory: { eq: "" } }) {
       nodes {
         name
         childImageSharp {
@@ -81,4 +81,4 @@ export const pageQuery = graphql`
     }
   }
 `;
-export default About;
+export default Gallery;

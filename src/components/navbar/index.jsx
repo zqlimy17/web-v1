@@ -1,13 +1,27 @@
-import React from "react";
-import styled from "styled-components";
-import Logo from "./Logo";
+import React, { useState, useEffect } from "react";
+import styled, { css } from "styled-components";
+import { useScrollDirection } from "@hooks";
 
+import Logo from "./Logo";
 import DesktopNav from "./DesktopNav";
 import MobileNav from "./MobileNav";
 
 const Navbar = () => {
+  const scrollDirection = useScrollDirection("down");
+  const [scrolledToTop, setScrolledToTop] = useState(true);
+  const handleScroll = () => {
+    setScrolledToTop(window.pageYOffset < 50);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <Wrapper>
+    <Wrapper scrollDirection={scrollDirection} scrolledToTop={scrolledToTop}>
       <nav>
         <div className="fade">
           <Logo />
@@ -20,7 +34,7 @@ const Navbar = () => {
 };
 
 const Wrapper = styled.header`
-  position: sticky;
+  position: fixed;
   top: 0;
   display: flex;
   height: 100px;
@@ -31,6 +45,27 @@ const Wrapper = styled.header`
   width: 100%;
   z-index: 2;
   backdrop-filter: blur(4px);
+  transition: var(--transition);
+
+  ${(props) =>
+    props.scrollDirection === "up" &&
+    !props.scrolledToTop &&
+    css`
+      height: 60px;
+      transform: translateY(0px);
+    `};
+
+  ${(props) =>
+    props.scrollDirection === "down" &&
+    !props.scrolledToTop &&
+    css`
+      height: 60px;
+      transform: translateY(-60px);
+      @media only screen and (max-width: 768px) {
+        height: 100px;
+        transform: translateY(-100px);
+      }
+    `};
 
   nav {
     margin: 0 50px;
@@ -48,7 +83,8 @@ const Wrapper = styled.header`
   }
 
   @media only screen and (max-width: 768px) {
-    position: relative;
+    height: 100px;
+
     nav {
       margin: 0 25px;
     }

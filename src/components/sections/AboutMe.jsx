@@ -2,8 +2,8 @@ import React, { useEffect, useRef } from "react";
 import styled from "styled-components";
 
 import { StaticImage } from "gatsby-plugin-image";
-import { srConfig } from "../../config";
-import sr from "../../utils/sr";
+import { srConfig } from "@config";
+import sr from "@utils/sr";
 
 const AboutMe = () => {
   const revealContainer = useRef(null);

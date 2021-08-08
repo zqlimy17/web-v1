@@ -1,7 +1,6 @@
 import React from "react";
-
 import styled from "styled-components";
-
+import { email } from "@config";
 const Intro = () => {
   return (
     <Wrapper>
@@ -17,7 +16,7 @@ const Intro = () => {
         </div>
         <div>
           <p className="fadeup" style={{ animationDelay: "1300ms" }}>
-            I am a full-stack software developer with a passion for dynamic
+            I am a full-stack software developer with a passion for front end
             development and high quality codes.
           </p>
           <p className="fadeup" style={{ animationDelay: "1400ms" }}>
@@ -26,7 +25,9 @@ const Intro = () => {
           </p>
         </div>
         <div className="fadeup" style={{ animationDelay: "1500ms" }}>
-          <button>Get in touch.</button>
+          <a href={`mailto:${email}`}>
+            <button>Get in touch</button>
+          </a>
         </div>
       </div>
     </Wrapper>
@@ -43,7 +44,6 @@ const Wrapper = styled.section`
   align-items: flex-start;
   min-height: 100vh;
   padding: 0px;
-  margin-top: -100px;
   margin-left: 150px;
   margin-right: 150px;
 

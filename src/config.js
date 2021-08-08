@@ -1,4 +1,5 @@
 module.exports = {
+  email: "zqlimy@gmail.com",
   srConfig: (delay = 50, viewFactor = 0.15) => ({
     origin: "bottom",
     distance: "0",

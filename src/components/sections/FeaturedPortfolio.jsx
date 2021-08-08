@@ -5,8 +5,8 @@ import { useStaticQuery, graphql } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
-import { srConfig } from "../../config";
-import sr from "../../utils/sr";
+import { srConfig } from "@config";
+import sr from "@utils/sr";
 const query = graphql`
   {
     allContentfulPortfolio(

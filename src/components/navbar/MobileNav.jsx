@@ -5,7 +5,7 @@ import Hamburger from "./Hamburger";
 import { AnchorLink } from "gatsby-plugin-anchor-links";
 import Resume from "../Resume";
 
-import { capitalize } from "../../utils/capitalize";
+import { capitalize } from "@utils/capitalize";
 
 const MobileNav = () => {
   const [open, setOpen] = useState(false);
@@ -24,7 +24,6 @@ const MobileNav = () => {
       <aside className={`${open ? "open" : ""}`}>
         <ol className="mono">
           {navLinks.map((link) => {
-            console.log(link);
             return (
               <li key={link}>
                 <AnchorLink
@@ -83,7 +82,7 @@ const Wrapper = styled.div`
   }
 
   button {
-    padding: 15px;
+    padding: 20px 30px;
   }
 
   @media only screen and (max-width: 768px) {

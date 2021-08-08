@@ -54,12 +54,6 @@ module.exports = {
       },
     },
     {
-      resolve: "gatsby-plugin-transition-link",
-      options: {
-        layout: require.resolve(`./src/components/Layout.jsx`),
-      },
-    },
-    {
       resolve: "gatsby-plugin-anchor-links",
       options: {
         offset: -100,

@@ -160,6 +160,7 @@ main ul li::before {
 }
 
 .numbered-headings {
+  font-family: "Mosk";
   display: flex;
   width: 100%;
   align-items: center;

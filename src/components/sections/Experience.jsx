@@ -3,8 +3,8 @@ import { CSSTransition } from "react-transition-group";
 
 import styled from "styled-components";
 import { useStaticQuery, graphql } from "gatsby";
-import { srConfig } from "../../config";
-import sr from "../../utils/sr";
+import { srConfig } from "@config";
+import sr from "@utils/sr";
 const query = graphql`
   {
     allContentfulExperience(sort: { fields: date, order: DESC }) {

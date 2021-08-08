@@ -27,6 +27,7 @@ const Logo = () => {
 };
 const Wrapper = styled.div`
   p {
+    margin: 0;
     font-size: 1.5rem;
     color: var(--secondary);
   }

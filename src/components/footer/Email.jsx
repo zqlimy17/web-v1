@@ -1,12 +1,12 @@
 import React from "react";
 import styled from "styled-components";
-
+import { email } from "@config";
 const Email = () => {
   return (
     <Wrapper className="fadeup" style={{ animationDelay: "1700ms" }}>
       <div>
-        <a className="mono" href="mailto:zqlimy@gmail.com">
-          zqlimy@gmail.com
+        <a className="mono" href={`mailto:${email}`}>
+          {email}
         </a>
       </div>
     </Wrapper>

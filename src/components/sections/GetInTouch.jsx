@@ -1,7 +1,7 @@
 import React, { useRef, useEffect } from "react";
 import styled from "styled-components";
-import { srConfig } from "../../config";
-import sr from "../../utils/sr";
+import { srConfig } from "@config";
+import sr from "@utils/sr";
 const GetInTouch = () => {
   const revealContainer = useRef(null);
   useEffect(() => {

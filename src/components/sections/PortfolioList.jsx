@@ -4,8 +4,8 @@ import styled from "styled-components";
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 
 import { CSSTransition } from "react-transition-group";
-import { srConfig } from "../../config";
-import sr from "../../utils/sr";
+import { srConfig } from "@config";
+import sr from "@utils/sr";
 const query = graphql`
   {
     allContentfulPortfolio(
@@ -55,7 +55,7 @@ const PortfolioList = () => {
   };
   return (
     <Wrapper ref={revealContainer}>
-      <h2>Other Noteworthy Projects</h2>
+      <h2 className="bold">Other Noteworthy Projects</h2>
       {/* <p className="mono">
         <a>View the archive</a>
       </p> */}
@@ -102,7 +102,7 @@ const PortfolioList = () => {
                 <p className="overline mono">{formattedDate}</p>
                 <div className="linksContainer">
                   <h3 className="bold">{title}</h3>
-                  <div className="links"></div>
+
                   <div className="links">
                     {git ? (
                       <a href={git} target="_blank" rel="noopener noreferrer">
@@ -184,8 +184,6 @@ const StyledCard = styled.div`
       color: var(--secondary);
     }
   }
-  
-  }
 
   h3 {
     transition: var(--transition);
@@ -205,6 +203,9 @@ const StyledCard = styled.div`
         }
         &::after {
           display: none;
+        }
+        @media only screen and (max-width: 768px) {
+          color: var(--secondary);
         }
       }
     }

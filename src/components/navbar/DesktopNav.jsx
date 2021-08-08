@@ -3,7 +3,7 @@ import { AnchorLink } from "gatsby-plugin-anchor-links";
 import styled from "styled-components";
 import Resume from "../Resume";
 
-import { capitalize } from "../../utils/capitalize";
+import { capitalize } from "@utils/capitalize";
 
 const DesktopNav = () => {
   const navLinks = ["about", "experience", "portfolio", "contact"];

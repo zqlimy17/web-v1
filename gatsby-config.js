@@ -11,6 +11,13 @@ module.exports = {
   },
   plugins: [
     {
+      resolve: "gatsby-plugin-google-analytics",
+      options: {
+        trackingId: "UA-128986886-1",
+        head: true,
+      },
+    },
+    {
       resolve: "gatsby-source-contentful",
       options: {
         accessToken: `${process.env.CONTENTFUL_API_KEY}`,
@@ -18,12 +25,6 @@ module.exports = {
       },
     },
     "gatsby-plugin-image",
-    {
-      resolve: "gatsby-plugin-google-analytics",
-      options: {
-        trackingId: "UA-128986886-1",
-      },
-    },
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-sitemap",
     "gatsby-plugin-sharp",
@@ -60,5 +61,6 @@ module.exports = {
         duration: 300,
       },
     },
+    `gatsby-plugin-styled-components`,
   ],
 };

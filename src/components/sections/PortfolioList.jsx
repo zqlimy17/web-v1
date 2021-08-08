@@ -101,7 +101,7 @@ const PortfolioList = () => {
               >
                 <p className="overline mono">{formattedDate}</p>
                 <div className="linksContainer">
-                  <h3 className="bold">{title}</h3>
+                  <h3 className="bold title">{title}</h3>
 
                   <div className="links">
                     {git ? (
@@ -183,6 +183,10 @@ const StyledCard = styled.div`
     h3 {
       color: var(--secondary);
     }
+  }
+
+  .title {
+    max-width: 60%;
   }
 
   h3 {

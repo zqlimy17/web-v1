@@ -40,8 +40,10 @@ const query = graphql`
 
 const PortfolioList = () => {
   const revealContainer = useRef(null);
+  const revealItems = useRef([]);
   useEffect(() => {
     sr.reveal(revealContainer.current, srConfig());
+    revealItems.current.forEach((ref, i) => sr.reveal(ref, srConfig(i * 100)));
   });
   const data = useStaticQuery(query);
   const projects = data.allContentfulPortfolio.nodes;
@@ -77,11 +79,15 @@ const PortfolioList = () => {
             year: "numeric",
           });
 
-          let show = "";
-          if (index >= 6) {
-            show = showMore ? "show" : "hide";
-          }
-
+          let show = index >= 6 ? (showMore ? "show" : "hide") : false;
+          let refFx =
+            index < 6
+              ? (el) => {
+                  revealItems.current[index] = el;
+                }
+              : () => {
+                  return;
+                };
           const style = { transitionDelay: (index - 6) * 150 + "ms" };
 
           return (
@@ -97,6 +103,9 @@ const PortfolioList = () => {
                 hidden={show === "hide"}
                 onClick={() => {
                   handleLink(demo);
+                }}
+                ref={(el) => {
+                  refFx(el);
                 }}
               >
                 <p className="overline mono">{formattedDate}</p>

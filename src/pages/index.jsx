@@ -15,7 +15,7 @@ const Main = () => {
     <Wrapper>
       <SEO
         title="Zack Lim | Portfolio & Resume"
-        description="I am a full-stack software developer with a passion for dynamic development and high quality codes. Currently, I'm focused on building accessible Shopify fronts at IRVINS."
+        description="I am a full-stack software developer with a passion for dynamic development and high-quality codes. Currently, I'm focused on building accessible Shopify fronts at IRVINS."
       />
       <Intro />
       <AboutMe />

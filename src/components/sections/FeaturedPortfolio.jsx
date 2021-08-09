@@ -47,7 +47,7 @@ const FeaturedPortfolio = () => {
     revealProjects.current.forEach((ref, i) =>
       sr.reveal(ref, srConfig(i * 100))
     );
-  });
+  }, []);
   const data = useStaticQuery(query);
   const featuredPortfolios = data.allContentfulPortfolio.nodes;
 

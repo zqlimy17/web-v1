@@ -12,7 +12,9 @@ const Archive = ({ data }) => {
   const archives = data.allContentfulPortfolio.nodes;
 
   useEffect(() => {
-    revealItems.current.forEach((ref, i) => sr.reveal(ref, srConfig(100, 1)));
+    revealItems.current.forEach((ref, i) =>
+      sr.reveal(ref, srConfig(100, 0.95))
+    );
   }, []);
 
   return (
@@ -95,11 +97,15 @@ const Wrapper = styled.section`
   margin: 100px 250px;
 
   .heading {
-    padding: 90px 0;
+    padding: 90px 0 50px 0;
     h1 {
+      color: var(--primary);
       font-size: 4em;
       line-height: 0;
       margin-bottom: 1em;
+    }
+    p {
+      color: var(--secodary);
     }
   }
   table {
@@ -163,10 +169,10 @@ const Wrapper = styled.section`
     .technologies {
       display: none;
     }
-    margin: 100px 25px;
+    margin: 50px 25px;
   }
   @media only screen and (max-width: 480px) {
-    margin: 100px 10px;
+    margin: 25px 15px;
   }
 `;
 

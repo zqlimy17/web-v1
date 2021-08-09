@@ -16,8 +16,8 @@ const Gallery = ({ data }) => {
             const path = getImage(image);
             const style = { animationDelay: index * 100 + 400 + "ms" };
             return (
-              <div className="img fadeup" style={style} key={index}>
-                <GatsbyImage image={path} alt={image.name} />
+              <div className="imgContainer fadeup" style={style} key={index}>
+                <GatsbyImage image={path} alt={image.name} imgClassName="img" />
               </div>
             );
           })}
@@ -29,24 +29,27 @@ const Gallery = ({ data }) => {
 
 const Wrapper = styled.section`
   max-width: 1200px;
-  margin: 100px 150px;
+  margin: 100px auto;
+  padding: 0 150px;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
   text-align: center;
-
+  * {
+    overflow: visible;
+  }
   h1 {
     color: var(--primary);
   }
 
   @media only screen and (max-width: 1040px) {
-    margin: 100px 100px;
+    padding: 0 100px;
   }
   @media only screen and (max-width: 768px) {
-    margin: 100px 50px;
+    padding: 0 50px;
   }
   @media only screen and (max-width: 480px) {
-    margin: 100px 0px;
+    padding: 0 0px;
   }
 `;
 
@@ -55,17 +58,40 @@ const StyledGallery = styled.div`
   column-count: 5;
   column-gap: 0;
 
-  @media only screen and (max-width: 1040px) {
+  @media only screen and (max-width: 1200px) {
     column-count: 4;
   }
-  @media only screen and (max-width: 768px) {
+
+  @media only screen and (max-width: 850px) {
     column-count: 3;
   }
-  @media only screen and (max-width: 480px) {
+  @media only screen and (max-width: 500px) {
     column-count: 2;
   }
-  .img {
-    margin: 8px 4px;
+  .imgContainer {
+    padding: 4px;
+
+    &:hover {
+      transform: translateZ(0);
+      position: relative;
+      z-index: 2;
+    }
+    &:not(:hover) {
+      transform: none;
+    }
+
+    .img {
+      transition: var(--transition);
+      transition-duration: 1200ms;
+      z-index: 1;
+    }
+    .img:hover {
+      z-index: 2;
+      transform: scale(2);
+    }
+    .img:not(:hover) {
+      transition-duration: 600ms;
+    }
   }
 `;
 

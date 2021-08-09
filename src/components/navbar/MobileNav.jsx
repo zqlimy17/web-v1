@@ -82,7 +82,7 @@ const Wrapper = styled.div`
   }
 
   button {
-    padding: 20px 30px;
+    padding: 20px 20px;
   }
 
   @media only screen and (max-width: 768px) {

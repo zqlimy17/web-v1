@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
-import { graphql, useStaticQuery } from "gatsby";
+import { Link, graphql, useStaticQuery } from "gatsby";
 import styled from "styled-components";
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 
@@ -58,9 +58,9 @@ const PortfolioList = () => {
   return (
     <Wrapper ref={revealContainer}>
       <h2 className="bold">Other Noteworthy Projects</h2>
-      {/* <p className="mono">
-        <a>View the archive</a>
-      </p> */}
+      <p className="mono">
+        <Link to="/archive">View the archive</Link>
+      </p>
       <StyledList>
         {projects.map((project, index) => {
           const {
@@ -152,10 +152,10 @@ const Wrapper = styled.section`
   margin: 50px auto;
   text-align: center;
   h2 {
-    margin-bottom: 40px;
+    /* margin-bottom: 40px; */
   }
   p {
-    margin-top: 12px;
+    margin: 20px 0;
   }
 
   button {

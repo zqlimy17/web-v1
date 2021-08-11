@@ -13,22 +13,38 @@ const Social = () => {
     <Wrapper className="fadeup" style={{ animationDelay: "1200ms" }}>
       <ul>
         <li className="fadeup" style={{ animationDelay: "1200ms" }}>
-          <a href="" target="_blank" rel="noopener noreferrer">
+          <a
+            href="https://github.com/zqlimy17"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <FaGithub size={28} />
           </a>
         </li>
         <li className="fadeup" style={{ animationDelay: "1300ms" }}>
-          <a href="" target="_blank" rel="noopener noreferrer">
+          <a
+            href="https://www.linkedin.com/in/zqlimy/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <FaLinkedin size={28} />
           </a>
         </li>
         <li className="fadeup" style={{ animationDelay: "1400ms" }}>
-          <a href="" target="_blank" rel="noopener noreferrer">
+          <a
+            href="https://www.instagram.com/zqlimy/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <FaInstagram size={28} />
           </a>
         </li>
         <li className="fadeup" style={{ animationDelay: "1500ms" }}>
-          <a href="" target="_blank" rel="noopener noreferrer">
+          <a
+            href="https://www.hackerrank.com/zqlimy"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <FaHackerrank size={28} />
           </a>
         </li>

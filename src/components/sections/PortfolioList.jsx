@@ -9,8 +9,8 @@ import sr from "@utils/sr";
 const query = graphql`
   {
     allContentfulPortfolio(
-      filter: { featured: { eq: false } }
-      sort: { fields: publishDate, order: DESC }
+      filter: {featured: {eq: false}}
+      sort: {publishDate: DESC}
       limit: 12
     ) {
       nodes {

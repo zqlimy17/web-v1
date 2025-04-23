@@ -17,7 +17,7 @@ const GetInTouch = () => {
         frameworks and for Shopify. Whether you have a question or just want to
         say hi, I'll try my best to get back to you!
       </p>
-      <a href="mailto:zqlimy@gmail.com" target="_blank">
+      <a href="https://zqlimy.com" target="_blank" rel="noreferrer">
         <button className="bold">Say Hello!</button>
       </a>
     </Wrapper>

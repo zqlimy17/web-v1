@@ -11,16 +11,7 @@ const Footer = () => {
         <Email />
       </div>
       <p className="mono">
-        Design inspired by{" "}
-        <a
-          href="https://brittanychiang.com/"
-          target="_blank"
-          rel="noreferrer nofollow"
-        >
-          Brittany Chiang
-        </a>
-        . <br className="mobile-break" />
-        Built by Zack Lim.
+        Zack
       </p>
     </Wrapper>
   );

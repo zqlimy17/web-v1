@@ -11,7 +11,7 @@ const query = graphql`
   {
     allContentfulPortfolio(
       filter: { featured: { eq: true } }
-      sort: { fields: publishDate, order: DESC }
+      sort: { publishDate: DESC }
     ) {
       nodes {
         featureImage {

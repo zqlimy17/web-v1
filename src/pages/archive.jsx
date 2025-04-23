@@ -37,7 +37,7 @@ const Archive = ({ data }) => {
             {archives.map((archive, index) => {
               const {
                 title,
-                about: { about },
+                // about: { about },
                 technologies: { technologies },
                 git,
                 demo,
@@ -178,7 +178,7 @@ const Wrapper = styled.section`
 
 export const query = graphql`
   query Archive {
-    allContentfulPortfolio(sort: { order: DESC, fields: publishDate }) {
+    allContentfulPortfolio(sort: {publishDate: DESC}) {
       nodes {
         title
         demo

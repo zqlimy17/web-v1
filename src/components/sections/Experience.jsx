@@ -7,7 +7,7 @@ import { srConfig } from "@config";
 import sr from "@utils/sr";
 const query = graphql`
   {
-    allContentfulExperience(sort: { fields: date, order: DESC }) {
+    allContentfulExperience(sort: { date: DESC }) {
       nodes {
         company
         description

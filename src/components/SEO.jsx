@@ -12,7 +12,7 @@ const query = graphql`
     }
   }
 `;
-const SEO = ({ title, description }) => {
+const Seo = ({ title, description }) => {
   const { site } = useStaticQuery(query);
   const metaDescription = description || site.siteMetadata.description;
   return (
@@ -24,4 +24,4 @@ const SEO = ({ title, description }) => {
   );
 };
 
-export default SEO;
+export default Seo;

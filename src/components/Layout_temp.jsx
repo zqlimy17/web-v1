@@ -1,6 +1,6 @@
 import React from "react";
-import Navbar from "./Navbar";
-import Footer from "./footer";
+import Navbar from "./Navbar_temp";
+import Footer from "./Footer_temp";
 
 import "normalize.css";
 import "../assets/css/main.css";

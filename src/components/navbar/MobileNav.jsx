@@ -12,12 +12,13 @@ const MobileNav = () => {
 
   const navLinks = ["about", "experience", "portfolio", "contact"];
 
-  useEffect(() => {
+useEffect(() => {
+  if (typeof document !== 'undefined') {
     open
       ? document.documentElement.classList.add("open")
       : document.documentElement.classList.remove("open");
-  }, [open]);
-
+  }
+}, [open]);
   return (
     <Wrapper>
       <Hamburger open={open} setOpen={setOpen} />

@@ -20,14 +20,16 @@ const query = graphql`
 `;
 const Experience = () => {
   const revealContainer = useRef(null);
+  const [activeTab, setActiveTab] = useState(0);
 
   useEffect(() => {
     sr.reveal(revealContainer.current, srConfig());
   });
   const data = useStaticQuery(query);
-  const experiences = data.allContentfulExperience.nodes;
+  console.log(data);
 
-  const [activeTab, setActiveTab] = useState(0);
+  if (!data) return null;
+  const experiences = data.allContentfulExperience.nodes;
 
   return (
     <Wrapper id="experience" ref={revealContainer}>
@@ -54,24 +56,14 @@ const Experience = () => {
         <StyledTabPanels>
           {experiences &&
             experiences.map((experience, index) => {
-              const { title, company, description, range, companyUrl } =
-                experience;
+              const { title, company, description, range, companyUrl } = experience;
               return (
-                <CSSTransition
-                  key={index}
-                  in={activeTab === index}
-                  timeout={500}
-                  classNames="fade"
-                >
+                <CSSTransition key={index} in={activeTab === index} timeout={500} classNames="fade">
                   <StyledTabPanel hidden={activeTab !== index}>
                     <h3>
                       {title}{" "}
                       {companyUrl ? (
-                        <a
-                          href={companyUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
+                        <a href={companyUrl} target="_blank" rel="noopener noreferrer">
                           @ {company}
                         </a>
                       ) : (

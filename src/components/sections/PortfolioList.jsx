@@ -8,20 +8,10 @@ import { srConfig } from "@config";
 import sr from "@utils/sr";
 const query = graphql`
   {
-    allContentfulPortfolio(
-      filter: {featured: {eq: false}}
-      sort: {publishDate: DESC}
-      limit: 12
-    ) {
+    allContentfulPortfolio(filter: { featured: { eq: false } }, sort: { publishDate: DESC }, limit: 12) {
       nodes {
         featureImage {
-          gatsbyImageData(
-            layout: CONSTRAINED
-            quality: 90
-            placeholder: TRACED_SVG
-            formats: AUTO
-            width: 800
-          )
+          gatsbyImageData(layout: CONSTRAINED, quality: 90, placeholder: TRACED_SVG, formats: AUTO, width: 800)
         }
         demo
         title
@@ -41,17 +31,18 @@ const query = graphql`
 const PortfolioList = () => {
   const revealContainer = useRef(null);
   const revealItems = useRef([]);
+  const [showMore, setShowMore] = useState(false);
   useEffect(() => {
     sr.reveal(revealContainer.current, srConfig());
     revealItems.current.forEach((ref, i) => sr.reveal(ref, srConfig(i * 100)));
   });
   const data = useStaticQuery(query);
+  console.log(data);
+  if (!data) return null;
   const projects = data.allContentfulPortfolio.nodes;
 
-  const [showMore, setShowMore] = useState(false);
-
   const handleLink = (demo) => {
-    if (demo) {
+    if (demo && typeof window !== "undefined") {
       window.open(demo);
     }
   };
@@ -91,12 +82,7 @@ const PortfolioList = () => {
           const style = { transitionDelay: (index - 6) * 150 + "ms" };
 
           return (
-            <CSSTransition
-              key={index}
-              in={show === "show"}
-              timeout={500}
-              classNames="fade"
-            >
+            <CSSTransition key={index} in={show === "show"} timeout={500} classNames="fade">
               <StyledCard
                 multiplier={demo ? 1 : 0}
                 style={style}

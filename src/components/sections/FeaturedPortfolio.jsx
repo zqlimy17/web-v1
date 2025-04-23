@@ -9,19 +9,10 @@ import { srConfig } from "@config";
 import sr from "@utils/sr";
 const query = graphql`
   {
-    allContentfulPortfolio(
-      filter: { featured: { eq: true } }
-      sort: { publishDate: DESC }
-    ) {
+    allContentfulPortfolio(filter: { featured: { eq: true } }, sort: { publishDate: DESC }) {
       nodes {
         featureImage {
-          gatsbyImageData(
-            layout: CONSTRAINED
-            quality: 90
-            placeholder: TRACED_SVG
-            formats: AUTO
-            width: 800
-          )
+          gatsbyImageData(layout: CONSTRAINED, quality: 90, placeholder: TRACED_SVG, formats: AUTO, width: 800)
         }
         demo
         title
@@ -44,11 +35,11 @@ const FeaturedPortfolio = () => {
 
   useEffect(() => {
     sr.reveal(revealContainer.current, srConfig());
-    revealProjects.current.forEach((ref, i) =>
-      sr.reveal(ref, srConfig(i * 100))
-    );
+    revealProjects.current.forEach((ref, i) => sr.reveal(ref, srConfig(i * 100)));
   }, []);
   const data = useStaticQuery(query);
+  console.log(data);
+  if (!data) return null;
   const featuredPortfolios = data.allContentfulPortfolio.nodes;
 
   return (
@@ -75,15 +66,10 @@ const FeaturedPortfolio = () => {
         const pathToImage = getImage(featureImage);
 
         return (
-          <StyledPortfolio
-            key={index}
-            ref={(el) => (revealProjects.current[index] = el)}
-          >
+          <StyledPortfolio key={index} ref={(el) => (revealProjects.current[index] = el)}>
             <StyledInfo>
               <div>
-                <p className="mono overline">
-                  Featured Project {formattedDate}
-                </p>
+                <p className="mono overline">Featured Project {formattedDate}</p>
                 {demo ? (
                   <a href={demo} target="_blank" rel="noopener noreferrer">
                     <h3 className="bold">{title}</h3>
@@ -115,12 +101,7 @@ const FeaturedPortfolio = () => {
             </StyledInfo>
             <StyledImage>
               <div className="imgWrapper">
-                <GatsbyImage
-                  className="gatsbyWrapper"
-                  image={pathToImage}
-                  alt={title}
-                  imgClassName="img"
-                />
+                <GatsbyImage className="gatsbyWrapper" image={pathToImage} alt={title} imgClassName="img" />
               </div>
             </StyledImage>
           </StyledPortfolio>

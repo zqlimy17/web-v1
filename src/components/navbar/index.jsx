@@ -10,14 +10,20 @@ const Navbar = () => {
   const scrollDirection = useScrollDirection("down");
   const [scrolledToTop, setScrolledToTop] = useState(true);
   const handleScroll = () => {
-    setScrolledToTop(window.pageYOffset < 50);
+    if (typeof window !== "undefined") {
+      setScrolledToTop(window.pageYOffset < 50);
+    } else {
+      setScrolledToTop(false);
+    }
   };
 
   useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
+    if (typeof window !== "undefined") {
+      window.addEventListener("scroll", handleScroll);
+      return () => {
+        window.removeEventListener("scroll", handleScroll);
+      };
+    }
   }, []);
 
   return (

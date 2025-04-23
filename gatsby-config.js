@@ -1,9 +1,14 @@
 require("dotenv").config({
-  path: `.env.${process.env.NODE_ENV}`,
+  path: `.env.${process.env.NODE_ENV || "development"}`,
 });
+
+if (!process.env.CONTENTFUL_API_KEY) {
+  console.warn("⚠️ CONTENTFUL_API_KEY is not defined!");
+}
+
 module.exports = {
   siteMetadata: {
-    siteUrl: "https://zqlimy.com",
+    siteUrl: "https://v1.zqlimy.com",
     title: "ZQLIMY's",
     description:
       "A place where snow doesn’t fall. Where the only light filling the night sky is the Moon. A river that flows south, cutting deep into the City.",

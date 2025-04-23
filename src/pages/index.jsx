@@ -8,15 +8,15 @@ import FeaturedPortfolio from "@components/sections/FeaturedPortfolio";
 import PortfolioList from "@components/sections/PortfolioList";
 import GetInTouch from "@components/sections/GetInTouch";
 
-// import Seo from "@components/Seo";
+import Seo from "@components/Seo";
 
 const Main = () => {
   return (
     <Wrapper>
-      {/* <Seo
+      <Seo
         title="Zack Lim | Portfolio & Resume"
         description="I am a full-stack software developer with a passion for dynamic development and high-quality codes. Currently, I'm focused on building accessible Shopify fronts at IRVINS."
-      /> */}
+      />
       <Intro />
       <AboutMe />
       <Experience />

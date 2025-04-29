@@ -4,7 +4,7 @@ import styled from "styled-components";
 const Resume = () => {
   return (
     <Wrapper>
-      <a href="resume.pdf" target="_blank" rel="noopener noreferrer">
+      <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">
         <button>Resume</button>
       </a>
     </Wrapper>

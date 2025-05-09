@@ -25,7 +25,7 @@ const AboutMe = () => {
                 HTML & CSS!
               </p>
               <p>
-                Fast-forward to today, I've had the privilege to learn programming and started pursuing software at an{" "}
+                Fast-forward to today, I've had the privilege to learn programming and pursued software at an{" "}
                 <a href="https://generalassemb.ly/" target="_blank" rel="noreferrer nofollow">
                   amazing school
                 </a>
@@ -33,7 +33,7 @@ const AboutMe = () => {
                 <a href="https://mediaonemarketing.com.sg/" target="_blank" rel="noreferrer nofollow">
                   startup agency
                 </a>
-                , and an{" "}
+                , and a manage the e-commerce sites of an{" "}
                 <a href="https://eatirvins.sg/" target="_blank" rel="noreferrer nofollow">
                   international e-commerce corporation
                 </a>

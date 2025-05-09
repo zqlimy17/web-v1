@@ -5,7 +5,7 @@ const Email = () => {
   return (
     <Wrapper className="fadeup" style={{ animationDelay: "1400ms" }}>
       <div>
-        <a className="mono" href={`mailto:${email}`}>
+        <a className="mono" href="https://wwwzqlimy.com">
           {email}
         </a>
       </div>

@@ -20,44 +20,26 @@ const AboutMe = () => {
           <div>
             <div className="text-container">
               <p>
-                Hi! My name is Zack Lim and I enjoy creating things that live on
-                the internet. I started playing around with websites back in the
-                late 2000s when Blogspot and Friendster was still a thing -
-                turns out, changing the background image to your favourite
-                character taught me a lot about HTML & CSS!
+                Hi! My name is Zack Lim and I enjoy creating things that live on the internet. I started playing around with websites back in the late 2000s
+                when Blogspot and Friendster were still a thing - turns out, changing the background image to your favourite character taught me a lot about
+                HTML & CSS!
               </p>
               <p>
-                Fast-forward to today, I've had the priviledge to learn
-                programming and started pursuing software at an{" "}
-                <a
-                  href="https://generalassemb.ly/"
-                  target="_blank"
-                  rel="noreferrer nofollow"
-                >
+                Fast-forward to today, I've had the privilege to learn programming and started pursuing software at an{" "}
+                <a href="https://generalassemb.ly/" target="_blank" rel="noreferrer nofollow">
                   amazing school
                 </a>
                 , worked at a{" "}
-                <a
-                  href="https://mediaonemarketing.com.sg/"
-                  target="_blank"
-                  rel="noreferrer nofollow"
-                >
+                <a href="https://mediaonemarketing.com.sg/" target="_blank" rel="noreferrer nofollow">
                   startup agency
                 </a>
                 , and an{" "}
-                <a
-                  href="https://eatirvins.sg/"
-                  target="_blank"
-                  rel="noreferrer nofollow"
-                >
+                <a href="https://eatirvins.sg/" target="_blank" rel="noreferrer nofollow">
                   international e-commerce corporation
                 </a>
-                . Today, my focus is building accessible and product-driven
-                websites for my clients.
+                . Today, my focus is building accessible and product-driven websites for my clients.
               </p>
-              <p>
-                Here are a few technologies I've been working with recently:
-              </p>
+              <p>Here are a few technologies I've been working with recently:</p>
             </div>
             <ul className="mono">
               <li>Javascript (ES6+)</li>
@@ -77,14 +59,7 @@ const AboutMe = () => {
         </div>
         <StyledImg>
           <div className="imgWrapper">
-            <StaticImage
-              className="img"
-              src="../../assets/images/me.jpeg"
-              width={300}
-              quality={90}
-              formats={["AUTO", "WEBP", "AVIF"]}
-              alt="zack lim"
-            />
+            <StaticImage className="img" src="../../assets/images/me.jpeg" width={300} quality={90} formats={["AUTO", "WEBP", "AVIF"]} alt="zack lim" />
           </div>
         </StyledImg>
       </div>

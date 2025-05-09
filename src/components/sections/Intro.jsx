@@ -16,16 +16,14 @@ const Intro = () => {
         </div>
         <div>
           <p className="fadeup" style={{ animationDelay: "800ms" }}>
-            I am a full-stack software developer with a passion for front end
-            development and high-quality codes.
+            I am a full-stack software developer with a passion for front end development and high-quality codes.
           </p>
           <p className="fadeup" style={{ animationDelay: "1000ms" }}>
-            Currently, I'm focused on building accessible Shopify fronts at{" "}
-            <a href="https://eatirvins.sg">IRVINS</a>.
+            Currently, I'm focused on building accessible Shopify fronts at <a href="https://eatirvins.sg">IRVINS</a>.
           </p>
         </div>
         <div className="fadeup" style={{ animationDelay: "1200ms" }}>
-          <a href={`mailto:${email}`}>
+          <a href="https://www.zqlimy.com/">
             <button>Get in touch</button>
           </a>
         </div>
